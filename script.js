@@ -24,6 +24,8 @@ const addNewTodo = () => {
     if (todoInput.value !== '') {
         newTodo = document.createElement('li')
         newTodo.textContent = todoInput.value
+        createToolsArea()
+
         ulList.append(newTodo)
 
         todoInput.value = ''
@@ -34,6 +36,25 @@ const addNewTodo = () => {
     }    
 }
 
+const createToolsArea = () => {
+    const toolsPanel = document.createElement('div')
+    toolsPanel.classList.add('tools')
+    newTodo.append(toolsPanel)
 
+    const completeBtn = document.createElement('button')
+    completeBtn.classList.add('complete')
+    completeBtn.innerHTML = '<i class="fas fa-check"></i></button>'
+
+    const editBtn = document.createElement('button')
+    editBtn.classList.add('edit')
+    editBtn.textContent = 'EDIT'
+
+    const deleteBtn = document.createElement('button')
+    deleteBtn.classList.add('delete')
+    deleteBtn.innerHTML = '<i class="fas fa-times"></i></button>'
+
+    toolsPanel.append(completeBtn, editBtn, deleteBtn)
+
+}
 
 document.addEventListener('DOMContentLoaded', main)
