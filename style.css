@@ -142,7 +142,7 @@ h1 {
     transform: translateX(-50%);
     width: 800px;
     color: var(--light);
-    background-color: var(--light-dark);
+    background-image: linear-gradient(340deg, #a7a7a7 0%, #555454 100%);
     border-radius: 5px;
 }
 
